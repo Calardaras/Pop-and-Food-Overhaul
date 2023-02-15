@@ -1,0 +1,22 @@
+namespace = pafo_windows
+
+pafo_windows.1 = { #Agriculture Province view
+	type = major_country_event
+	title = pafo_windows.1.t
+	desc = pafo_windows.1.desc
+	picture = great_library
+	trigger = {
+
+	}
+	immediate = {
+    	set_variable = agri_province_overview
+    }
+
+    option = {      
+        name = pafo_windows.1.a
+        remove_variable = agri_province_overview
+    }
+}
+
+pafo_windows.2 = { #Agriculture Province view
+}

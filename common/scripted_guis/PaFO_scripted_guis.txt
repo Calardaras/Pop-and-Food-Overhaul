@@ -1,0 +1,14 @@
+show_argiculture_button = {
+	scope = province
+	ai_is_valid = {
+		always = no
+	}
+	is_valid = {
+		NOT = {
+			has_variable = agri_province_overview
+		}
+	}
+	effect = {
+		trigger_event = pafo_windows.1
+	}
+}

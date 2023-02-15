@@ -1,0 +1,212 @@
+namespace = pafo_test
+pafo_test.1 = {
+	#initial
+	type = country_event
+	title = pafo_test.1.t
+	desc = pafo_test.1.desc
+	picture = aqueducts
+	hidden = no
+	immediate = {
+		# EFFECT FIELD - Fires after trigger check, but before everything else
+		every_owned_province = {
+			save_scope_as = curr_province
+			if = {
+				limit = {
+					terrain = plains
+				}
+				set_variable = {
+					name = fields
+					value = 6
+				}
+				set_variable = {
+					name = graziery
+					value = 2
+				}
+				set_variable = {
+					name = hunting
+					value = 0
+				}
+				set_variable = {
+					name = curr_fields
+					value = 0
+				}
+				set_variable = {
+					name = curr_graziery
+					value = 0
+				}
+				set_variable = {
+					name = curr_hunting
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					terrain = hills
+				}
+				set_variable = {
+					name = fields
+					value = 2
+				}
+				set_variable = {
+					name = graziery
+					value = 3
+				}
+				set_variable = {
+					name = hunting
+					value = 0
+				}
+				set_variable = {
+					name = curr_fields
+					value = 0
+				}
+				set_variable = {
+					name = curr_graziery
+					value = 0
+				}
+				set_variable = {
+					name = curr_hunting
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					terrain = farmland
+				}
+				set_variable = {
+					name = fields
+					value = 8
+				}
+				set_variable = {
+					name = graziery
+					value = 2
+				}
+				set_variable = {
+					name = hunting
+					value = 0
+				}
+				set_variable = {
+					name = curr_fields
+					value = 0
+				}
+				set_variable = {
+					name = curr_graziery
+					value = 0
+				}
+				set_variable = {
+					name = curr_hunting
+					value = 0
+				}
+			}
+		}
+	}
+	option = {
+		name = pafo_test.1.a
+	}
+}
+
+pafo_test.2 = {
+	#get work
+	type = country_event
+	title = pafo_test.2.t
+	desc = pafo_test.2.desc
+	picture = aqueducts
+	hidden = no
+	immediate = {
+		every_owned_province = {	
+			save_scope_as = curr_province
+			set_variable = {
+				name = unemployed_count
+				value = 0
+			}
+			set_variable = {
+				name = employed_count
+				value = 0
+			}
+			set_variable = {
+				name = fields_count
+				value = 2
+			}
+			set_variable = {
+				name = graziery_count
+				value = 4
+			}
+			set_variable = {
+				name = hunting_count
+				value = 6
+			}
+			every_pops_in_province = {
+				limit = {
+					pop_type = citizen
+				}
+				add_to_list = unemployed
+				change_variable = {
+					name = unemployed_count
+					add = 1
+				}
+			}
+			while = {
+				count = 20
+				if = {
+					limit = {
+						unemployed_count = 0
+					}
+					break = yes
+				}
+				if = {
+					limit = {
+						curr_fields <= 3
+					}
+					change_variable = {
+						name = curr_fields 
+						add = 1
+					}
+					change_variable = {
+						name = employed_count 
+						add = 1
+					}
+					change_variable = {
+						name = unemployed_count 
+						subtract = 1
+					}
+				}
+				if = {
+					limit = {
+						curr_graziery <= 3
+					}
+					change_variable = {
+						name = curr_graziery 
+						add = 1
+					}
+					change_variable = {
+						name = employed_count 
+						add = 1
+					}
+					change_variable = {
+						name = unemployed_count 
+						subtract = 1
+					}
+				}
+				if = {
+					limit = {
+						curr_hunting <= 3
+					}
+					change_variable = {
+						name = curr_hunting
+						add = 1
+					}
+					change_variable = {
+						name = employed_count 
+						add = 1
+					}
+					change_variable = {
+						name = unemployed_count 
+						subtract = 1
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = pafo_test.2.a
+	}
+}
