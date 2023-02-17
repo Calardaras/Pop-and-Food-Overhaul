@@ -3036,8 +3036,8 @@ window = {
 								margin_top = 0
 								spacing = 2
 								visible = "[Not( Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork ) )]"
-								@mincategorybuttonwidth = 100
-								@maxcategorybuttonwidth = 135
+								@mincategorybuttonwidth = 136
+								@maxcategorybuttonwidth = 160
 								@mincategorybuttonheight = 28 
 								@maxcategorybuttonheight = 34
 								#widget = {
@@ -3072,31 +3072,6 @@ window = {
 									blockoverride "ClickFunction"
 									{
 										onclick = "[GetVariableSystem.Set('province_tabs', 'pops')]"
-									}
-								}  
-								category_tab = { 
-									name = "food_tab"
-									blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
-									blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
-									blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('province_tabs', 'food'))]" }
-									blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('province_tabs', 'food')]" }
-									######## Shared Overrides
-									blockoverride "Center_text" { visible = no }
-									blockoverride "Center_text_and_icon" { visible = yes }
-									blockoverride "Button_text" { 
-										text = "[ProvinceWindow.GetProvince.MakeScope.Var('total_food_income').GetValue|1]"										
-									}
-									tooltip = FOOD_INCOME_TT
-									blockoverride "Icon"
-									{
-										texture = "gfx/interface/icons/shared_icons/food.dds"
-										visible = yes
-										size = { 30 30 }
-									}
-									######## Small Button Overrides
-									blockoverride "ClickFunction"
-									{
-										onclick = "[GetVariableSystem.Set('province_tabs', 'food')]"
 									}
 								}   
 								category_tab = { 
@@ -3156,8 +3131,8 @@ window = {
 								margin_top = 0
 								spacing = 2
 								visible = "[Or( ProvinceWindow.GetProvince.HasGreatWork, ProvinceWindow.GetProvince.HasSecondaryGreatWork )]"
-								@gwmincategorybuttonwidth = 74
-								@gwmaxcategorybuttonwidth = 90
+								@gwmincategorybuttonwidth = 106
+								@gwmaxcategorybuttonwidth = 112
 								@gwmincategorybuttonheight = 28 
 								@gwmaxcategorybuttonheight = 34
 								#widget = {
@@ -3188,32 +3163,7 @@ window = {
 									{
 										onclick = "[GetVariableSystem.Set('province_tabs', 'pops')]"
 									}
-								}
-								category_tab = { 
-									name = "food_tab2"
-									blockoverride "MinSize" { size = { @mincategorybuttonwidth @mincategorybuttonheight } }
-									blockoverride "MaxSize" { size = { @maxcategorybuttonwidth @maxcategorybuttonheight } }
-									blockoverride "MinVisible" { visible = "[Not( GetVariableSystem.HasValue('province_tabs', 'food'))]" }
-									blockoverride "MaxVisible" { visible = "[GetVariableSystem.HasValue('province_tabs', 'food')]" }
-									######## Shared Overrides
-									blockoverride "Center_text" { visible = no }
-									blockoverride "Center_text_and_icon" { visible = yes }
-									blockoverride "Button_text" { 
-										text = "[ProvinceWindow.GetProvince.MakeScope.Var('total_food_income').GetValue|1]"										
-									}
-									tooltip = FOOD_INCOME_TT
-									blockoverride "Icon"
-									{
-										texture = "gfx/interface/icons/shared_icons/food.dds"
-										visible = yes
-										size = { 30 30 }
-									}
-									######## Small Button Overrides
-									blockoverride "ClickFunction"
-									{
-										onclick = "[GetVariableSystem.Set('province_tabs', 'food')]"
-									}
-								}     
+								}   
 								category_tab = { 
 									name = "buildings_tab2"
 									blockoverride "MinSize" { size = { @gwmincategorybuttonwidth @gwmincategorybuttonheight } }
@@ -3287,87 +3237,6 @@ window = {
 						}	
 						
 					}
-					vbox = {
-						name = "food_tab"
-						layoutpolicy_vertical = expanding
-						layoutpolicy_horizontal = expanding
-						visible = "[GetVariableSystem.HasValue('province_tabs', 'food')]"
-						state = {
-							name = "show_food_tab"
-							
-							on_start = "[PdxGuiWidget.Show]"
-						}
-						using = hide_province_tab
-						
-						margin_widget = {
-							layoutpolicy_vertical = expanding
-							layoutpolicy_horizontal = expanding
-							margin = { 12 0 }
-							margin_bottom = 0
-							
-							
-							margin_widget = {
-								size = { 100% 40 }
-								position = { 0 -1 }
-								hbox = {
-									layoutpolicy_horizontal = expanding
-									icon_and_text = {
-										size = { 100 0 }
-										position = { 0 -40 }
-										tooltip = TRADE_ATTRACTION_TT
-										blockoverride "Text"
-										{
-											text = "[ProvinceWindow.GetProvince.MakeScope.Var('total_trade_attraction').GetValue|1]"
-										}
-										blockoverride "Icon"
-										{
-											texture = "gfx/interface/icons/modifiers/commerce_value.dds"
-										}
-									}									
-									icon_and_text = {
-										name = "fields"
-										size = { @stats_icon_width 0 }
-										tooltip = ""
-										blockoverride "Icon"
-										{
-											texture = "gfx/interface/icons/modifiers/farmland_combat_bonus.dds"
-										}
-										blockoverride "Text"
-										{
-											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_fields').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('fields').GetValue|0]"
-										}
-									}
-									icon_and_text = {
-										name = "graziery"
-										size = { @stats_icon_width 0 }
-										tooltip = ""
-										blockoverride "Icon"
-										{
-											texture = "gfx/interface/icons/tradegoods/cattle.dds"
-										}
-										blockoverride "Text"
-										{
-											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_graziery').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('graziery').GetValue|0]"
-										}
-									}
-									icon_and_text = {
-										name = "hunting"
-										size = { @stats_icon_width 0 }
-										tooltip = ""
-										blockoverride "Icon"
-										{
-											texture = "gfx/interface/icons/tradegoods/fish.dds"
-										}
-										blockoverride "Text"
-										{
-											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_hunting').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('hunting').GetValue|0]"
-										}
-									}
-								}
-							}
-						}
-					}
-
 					vbox = {
 						name = "pops_tab"
 						layoutpolicy_vertical = expanding
@@ -3810,7 +3679,6 @@ window = {
 									
 								}
 							}
-							
 							margin_widget = {
 								size = { 100% 40 }
 								position = { 0 40 }
@@ -3852,10 +3720,54 @@ window = {
 											text = "[ProvinceWindow.GetState.GetFortsCurrent]/[ProvinceWindow.GetState.GetFortsLimit]"
 										}
 									}
-									
 								}
 							}
-							
+							margin_widget = {
+								size = { 100% 40 }
+								position = { 0 80 }
+									hbox = {
+										layoutpolicy_horizontal = expanding
+									icon_and_text = {
+										name = "fields"
+										size = { @stats_icon_width 0 }
+										tooltip = ""
+										blockoverride "Icon"
+										{
+											texture = "gfx/interface/icons/modifiers/farmland_combat_bonus.dds"
+										}
+										blockoverride "Text"
+										{
+											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_fields').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('fields').GetValue|0]"
+										}
+									}
+									icon_and_text = {
+										name = "graziery"
+										size = { @stats_icon_width 0 }
+										tooltip = ""
+										blockoverride "Icon"
+										{
+											texture = "gfx/interface/icons/tradegoods/cattle.dds"
+										}
+										blockoverride "Text"
+										{
+											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_graziery').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('graziery').GetValue|0]"
+										}
+									}
+									icon_and_text = {
+										name = "hunting"
+										size = { @stats_icon_width 0 }
+										tooltip = ""
+										blockoverride "Icon"
+										{
+											texture = "gfx/interface/icons/tradegoods/fish.dds"
+										}
+										blockoverride "Text"
+										{
+											text = "[ProvinceWindow.GetProvince.MakeScope.GetVariable('curr_hunting').GetValue|0]/[ProvinceWindow.GetProvince.MakeScope.GetVariable('hunting').GetValue|0]"
+										}
+									}
+								}
+							}
 							#margin_widget = {
 							#	size = { 198 80 }
 							#	position = { 2 -16 }
@@ -4591,6 +4503,18 @@ window = {
                         layoutpolicy_horizontal = fixed
                         blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/state_capital.dds" }
 						tooltip = "[ProvinceWindow.GetProvince.GetStateCapitalTooltip]"
+					}
+					# # PaFO added
+					icon_button_province = {
+						size = { 144 66 }
+						datacontext = "[GetScriptedGui('show_argiculture_button')]" 
+						visible = "[ProvinceWindow.IsPlayerProvince]"
+						enabled = "[ScriptedGui.IsValid( GuiScope.SetRoot( Player.MakeScope ).End )]"
+						tooltip = "SHOW_AGRICULTURE_BUTTON_TOOLTIP"
+						blockoverride "On_click" {
+							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+						}
+						blockoverride "Icon" { texture = "gfx/interface/icons/shared_icons/food.dds" }
 					}
                 }
             }
