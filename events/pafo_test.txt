@@ -112,97 +112,9 @@ pafo_test.2 = {
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		every_owned_province = {	
-			save_scope_as = curr_province
-			set_variable = {
-				name = unemployed_count
-				value = 0
-			}
-			set_variable = {
-				name = employed_count
-				value = 0
-			}
-			set_variable = {
-				name = fields_count
-				value = 2
-			}
-			set_variable = {
-				name = graziery_count
-				value = 4
-			}
-			set_variable = {
-				name = hunting_count
-				value = 6
-			}
+		every_owned_province = {
 			every_pops_in_province = {
-				limit = {
-					pop_type = citizen
-				}
-				add_to_list = unemployed
-				change_variable = {
-					name = unemployed_count
-					add = 1
-				}
-			}
-			while = {
-				count = 20
-				if = {
-					limit = {
-						unemployed_count = 0
-					}
-					break = yes
-				}
-				if = {
-					limit = {
-						curr_fields <= 3
-					}
-					change_variable = {
-						name = curr_fields 
-						add = 1
-					}
-					change_variable = {
-						name = employed_count 
-						add = 1
-					}
-					change_variable = {
-						name = unemployed_count 
-						subtract = 1
-					}
-				}
-				if = {
-					limit = {
-						curr_graziery <= 3
-					}
-					change_variable = {
-						name = curr_graziery 
-						add = 1
-					}
-					change_variable = {
-						name = employed_count 
-						add = 1
-					}
-					change_variable = {
-						name = unemployed_count 
-						subtract = 1
-					}
-				}
-				if = {
-					limit = {
-						curr_hunting <= 3
-					}
-					change_variable = {
-						name = curr_hunting
-						add = 1
-					}
-					change_variable = {
-						name = employed_count 
-						add = 1
-					}
-					change_variable = {
-						name = unemployed_count 
-						subtract = 1
-					}
-				}
+				
 			}
 		}
 	}
