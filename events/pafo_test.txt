@@ -113,12 +113,60 @@ pafo_test.2 = {
 	hidden = no
 	immediate = {
 		every_owned_province = {
-			every_pops_in_province = {
-				
-			}
+
 		}
 	}
 	option = {
 		name = pafo_test.2.a
+	}
+}
+
+pafo_test.3 = {
+	#add
+	type = country_event
+	title = pafo_test.3.t
+	desc = pafo_test.3.desc
+	picture = aqueducts
+	hidden = no
+	immediate = {
+		every_commander = {
+			limit = { 
+				OR = {
+					is_governor = yes
+					is_ruler = yes
+				}
+			}
+			every_governor_state ={
+				add_state_modifier = {
+					name = levies_raised
+					duration = -1
+				}
+			}
+		}
+	}
+	option = {
+		name = pafo_test.3.a
+	}
+}
+
+pafo_test.4 = {
+	#clear
+	type = country_event
+	title = pafo_test.4.t
+	desc = pafo_test.4.desc
+	picture = aqueducts
+	hidden = no
+	immediate = {
+		every_country_state = {
+			limit = {
+				governor_or_ruler = {
+					is_general = no
+				}
+		    }
+			remove_state_modifier = levies_raised
+		}
+	}
+	option = {
+		name = pafo_test.4.a
 	}
 }

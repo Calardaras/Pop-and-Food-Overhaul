@@ -1,0 +1,3 @@
+levies_raised = {
+	local_monthly_food_modifier = -0.8
+}
