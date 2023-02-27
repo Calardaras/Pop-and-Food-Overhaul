@@ -1,0 +1,37 @@
+every_owned_province = {
+    switch = {
+        trigger = terrain
+        plains = {
+            set_variable = { name = fields value = 16 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        mountain = {
+            set_variable = { name = fields value = 8 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        hills = {
+            set_variable = { name = fields value = 12 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        desert = {
+            set_variable = { name = fields value = 8 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        marsh = {
+            set_variable = { name = fields value = 10 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        jungle = {
+            set_variable = { name = fields value = 12 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        farmland = {
+            set_variable = { name = fields value = 20 }
+            set_variable = { name = curr_fields value = 0 }
+        }
+        forest = {
+            set_variable = { name = fields value = 10 }
+            set_variable = { name = curr_fields value = 0 }
+        }    
+}
+}

@@ -1,0 +1,29 @@
+monthly_country_pulse = {
+	on_actions = {
+	}
+	effect = {
+		every_country = {
+			every_commander = {
+				limit = { 
+					OR = {
+						is_governor = yes
+						is_ruler = yes
+					}
+				}
+				every_governor_state ={
+					limit = {
+						Not = {
+							has_state_modifier = levies_raised
+						}
+					}
+					add_state_modifier = {
+						name = levies_raised
+						duration = 365
+					}
+				}
+			}
+		}
+	}
+	events = {
+	}
+}

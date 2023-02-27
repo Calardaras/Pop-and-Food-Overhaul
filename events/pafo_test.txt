@@ -7,94 +7,40 @@ pafo_test.1 = {
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		# EFFECT FIELD - Fires after trigger check, but before everything else
-		every_owned_province = {
-			save_scope_as = curr_province
-			if = {
-				limit = {
-					terrain = plains
+		every_province = {
+			switch = {
+				trigger = terrain
+				plains = {
+					set_variable = { name = fields value = 16 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = fields
-					value = 6
+				mountain = {
+					set_variable = { name = fields value = 8 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = graziery
-					value = 2
+				hills = {
+					set_variable = { name = fields value = 12 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = hunting
-					value = 0
+				desert = {
+					set_variable = { name = fields value = 8 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = curr_fields
-					value = 0
+				marsh = {
+					set_variable = { name = fields value = 10 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = curr_graziery
-					value = 0
+				jungle = {
+					set_variable = { name = fields value = 12 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-				set_variable = {
-					name = curr_hunting
-					value = 0
+				farmland = {
+					set_variable = { name = fields value = 20 }
+					set_variable = { name = curr_fields value = 0 }
 				}
-			}
-			if = {
-				limit = {
-					terrain = hills
-				}
-				set_variable = {
-					name = fields
-					value = 2
-				}
-				set_variable = {
-					name = graziery
-					value = 3
-				}
-				set_variable = {
-					name = hunting
-					value = 0
-				}
-				set_variable = {
-					name = curr_fields
-					value = 0
-				}
-				set_variable = {
-					name = curr_graziery
-					value = 0
-				}
-				set_variable = {
-					name = curr_hunting
-					value = 0
-				}
-			}
-			if = {
-				limit = {
-					terrain = farmland
-				}
-				set_variable = {
-					name = fields
-					value = 8
-				}
-				set_variable = {
-					name = graziery
-					value = 2
-				}
-				set_variable = {
-					name = hunting
-					value = 0
-				}
-				set_variable = {
-					name = curr_fields
-					value = 0
-				}
-				set_variable = {
-					name = curr_graziery
-					value = 0
-				}
-				set_variable = {
-					name = curr_hunting
-					value = 0
+				forest = {
+					set_variable = { name = fields value = 10 }
+					set_variable = { name = curr_fields value = 0 }
 				}
 			}
 		}
@@ -112,8 +58,33 @@ pafo_test.2 = {
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		every_owned_province = {
-
+		every_owned_province = { 
+			change_variable = { name = curr_fields value = 0 }
+			change_variable = {
+				name = curr_fields
+				add = num_of_slaves
+			}
+			change_variable = {
+				name = curr_fields
+				add = num_of_citizen
+			}
+			change_variable = {
+				name = curr_fields
+				add = num_of_freemen
+			}
+			# if = {
+			# 	limit = { owner = { is_tribal = yes} }
+			# 	change_variable = {
+			# 		name = curr_fields
+			# 		add = num_of_tribesmen
+			# 	}
+			# }
+			# change_variable = {
+			# 	name = curr_fields
+			# 	divide  = 3
+			# 	round = yes
+			# }
+			pafo_foods_output_effect = yes
 		}
 	}
 	option = {
@@ -122,7 +93,7 @@ pafo_test.2 = {
 }
 
 pafo_test.3 = {
-	#add
+	#add food penalty
 	type = country_event
 	title = pafo_test.3.t
 	desc = pafo_test.3.desc
@@ -139,7 +110,7 @@ pafo_test.3 = {
 			every_governor_state ={
 				add_state_modifier = {
 					name = levies_raised
-					duration = -1
+					duration = 365
 				}
 			}
 		}
@@ -150,7 +121,7 @@ pafo_test.3 = {
 }
 
 pafo_test.4 = {
-	#clear
+	#clear food penalty
 	type = country_event
 	title = pafo_test.4.t
 	desc = pafo_test.4.desc

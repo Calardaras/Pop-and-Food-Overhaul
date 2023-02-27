@@ -1,3 +1,28 @@
-levies_raised = {
-	local_monthly_food_modifier = -0.8
-}
+levies_raised = { local_monthly_food_modifier = -0.6 }
+foods_output_0 = { local_monthly_food = 0.0 }
+foods_output_1 = { local_monthly_food = 0.25 }
+foods_output_2 = { local_monthly_food = 0.5 }
+foods_output_3 = { local_monthly_food = 0.75 }
+foods_output_4 = { local_monthly_food = 1.0 }
+foods_output_5 = { local_monthly_food = 1.25 }
+foods_output_6 = { local_monthly_food = 1.5 }
+foods_output_7 = { local_monthly_food = 1.75 }
+foods_output_8 = { local_monthly_food = 2.0 }
+foods_output_9 = { local_monthly_food = 2.25 }
+foods_output_10 = { local_monthly_food = 2.5 }
+foods_output_11 = { local_monthly_food = 2.75 }
+foods_output_12 = { local_monthly_food = 3.0 }
+foods_output_13 = { local_monthly_food = 3.25 }
+foods_output_14 = { local_monthly_food = 3.5 }
+foods_output_15 = { local_monthly_food = 3.75 }
+foods_output_16 = { local_monthly_food = 4.0 }
+foods_output_17 = { local_monthly_food = 4.25 }
+foods_output_18 = { local_monthly_food = 4.5 }
+foods_output_19 = { local_monthly_food = 4.75 }
+foods_output_20 = { local_monthly_food = 5.0 }
+foods_output_21 = { local_monthly_food = 5.25 }
+foods_output_22 = { local_monthly_food = 5.5 }
+foods_output_23 = { local_monthly_food = 5.75 }
+foods_output_24 = { local_monthly_food = 6.0 }
+foods_output_25 = { local_monthly_food = 6.25 }
+foods_output_26 = { local_monthly_food = 6.5 }
