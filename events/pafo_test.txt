@@ -59,6 +59,14 @@ pafo_test.2 = {
 	immediate = {
 		every_province = { 
 			limit = { has_variable = curr_fields }
+			set_variable = {
+				name = curr_fields
+				value = total_population
+			}
+			change_variable = {
+				name = curr_fields
+				subtract = num_of_nobles
+			}
 			debug_log_scopes = no
 			pafo_foods_output_effect = yes
 		}
