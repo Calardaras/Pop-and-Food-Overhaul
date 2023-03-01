@@ -1,5 +1,5 @@
 pafo_foods_output_effect = {
-    If = {
+    if = {
         limit = { terrain = plains }
         switch = {
             trigger = var:curr_fields
@@ -23,7 +23,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_16 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = mountain }
         switch = {
             trigger = var:curr_fields
@@ -39,7 +39,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_8 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = hills }
         switch = {
             trigger = var:curr_fields
@@ -59,7 +59,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_12 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = desert }
         switch = {
             trigger = var:curr_fields
@@ -75,7 +75,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_8 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = marsh }
         switch = {
             trigger = var:curr_fields
@@ -93,7 +93,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_10 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = jungle }
         switch = {
             trigger = var:curr_fields
@@ -113,7 +113,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_12 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = farmland }
         switch = {
             trigger = var:curr_fields
@@ -141,7 +141,7 @@ pafo_foods_output_effect = {
             fallback = {add_province_modifier = { name = foods_output_20 duration = 365}}
         }
     }
-    If = {
+    if = {
         limit = { terrain = forest }
         switch = {
             trigger = var:curr_fields

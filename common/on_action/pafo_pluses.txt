@@ -2,28 +2,49 @@ monthly_country_pulse = {
 	on_actions = {
 	}
 	effect = {
-		every_country = {
-			every_commander = {
-				limit = { 
-					OR = {
-						is_governor = yes
-						is_ruler = yes
+		every_commander = {
+			limit = { 
+				OR = {
+					is_governor = yes
+					is_ruler = yes
+				}
+			}
+			every_governor_state ={
+				limit = {
+					Not = {
+						has_state_modifier = levies_raised
 					}
 				}
-				every_governor_state ={
-					limit = {
-						Not = {
-							has_state_modifier = levies_raised
-						}
-					}
-					add_state_modifier = {
-						name = levies_raised
-						duration = 365
-					}
+				add_state_modifier = {
+					name = levies_raised
+					duration = 365
 				}
 			}
 		}
 	}
 	events = {
+	}
+}
+
+yearly_province_pulse = {
+	on_actions = {
+	}
+	effect = {
+		if = {
+			limit = { has_variable = curr_fields }
+			set_variable = {
+				name = curr_fields
+				value = total_population
+			}
+			pafo_foods_output_effect = yes
+		}
+	}
+	events = {
+	}
+}
+
+on_game_initialized = {
+	events = {
+		pafo_test.1
 	}
 }

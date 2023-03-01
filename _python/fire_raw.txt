@@ -32,6 +32,6 @@ every_owned_province = {
         forest = {
             set_variable = { name = fields value = 10 }
             set_variable = { name = curr_fields value = 0 }
-        }    
-}
+        }
+    }
 }

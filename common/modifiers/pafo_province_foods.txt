@@ -1,4 +1,4 @@
-levies_raised = { local_monthly_food_modifier = -0.6 }
+levies_raised = { local_monthly_food_modifier = -0.2 }
 foods_output_0 = { local_monthly_food = 0.0 }
 foods_output_1 = { local_monthly_food = 0.25 }
 foods_output_2 = { local_monthly_food = 0.5 }

@@ -1,11 +1,10 @@
 namespace = pafo_test
 pafo_test.1 = {
 	#initial
-	type = country_event
-	title = pafo_test.1.t
-	desc = pafo_test.1.desc
-	picture = aqueducts
-	hidden = no
+    type = country_event
+	
+	hidden = yes
+
 	immediate = {
 		every_province = {
 			switch = {
@@ -58,32 +57,9 @@ pafo_test.2 = {
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		every_owned_province = { 
-			change_variable = { name = curr_fields value = 0 }
-			change_variable = {
-				name = curr_fields
-				add = num_of_slaves
-			}
-			change_variable = {
-				name = curr_fields
-				add = num_of_citizen
-			}
-			change_variable = {
-				name = curr_fields
-				add = num_of_freemen
-			}
-			# if = {
-			# 	limit = { owner = { is_tribal = yes} }
-			# 	change_variable = {
-			# 		name = curr_fields
-			# 		add = num_of_tribesmen
-			# 	}
-			# }
-			# change_variable = {
-			# 	name = curr_fields
-			# 	divide  = 3
-			# 	round = yes
-			# }
+		every_province = { 
+			limit = { has_variable = curr_fields }
+			debug_log_scopes = no
 			pafo_foods_output_effect = yes
 		}
 	}
