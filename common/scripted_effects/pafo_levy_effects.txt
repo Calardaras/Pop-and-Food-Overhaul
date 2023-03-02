@@ -21,3 +21,29 @@ raise_panalty_effect = {
 		}
 	}
 }
+
+pafo_levies_raised_effect = {
+	switch = {
+		trigger = var:curr_levies
+		1 = {add_province_modifier = { name = levies_raised_1 duration = 365}}
+		2 = {add_province_modifier = { name = levies_raised_2 duration = 365}}
+		3 = {add_province_modifier = { name = levies_raised_3 duration = 365}}
+		4 = {add_province_modifier = { name = levies_raised_4 duration = 365}}
+		5 = {add_province_modifier = { name = levies_raised_5 duration = 365}}
+		6 = {add_province_modifier = { name = levies_raised_6 duration = 365}}
+		7 = {add_province_modifier = { name = levies_raised_7 duration = 365}}
+		8 = {add_province_modifier = { name = levies_raised_8 duration = 365}}
+		9 = {add_province_modifier = { name = levies_raised_9 duration = 365}}
+		10 = {add_province_modifier = { name = levies_raised_10 duration = 365}}
+		11 = {add_province_modifier = { name = levies_raised_11 duration = 365}}
+		12 = {add_province_modifier = { name = levies_raised_12 duration = 365}}
+		13 = {add_province_modifier = { name = levies_raised_13 duration = 365}}
+		14 = {add_province_modifier = { name = levies_raised_14 duration = 365}}
+		15 = {add_province_modifier = { name = levies_raised_15 duration = 365}}
+		16 = {add_province_modifier = { name = levies_raised_16 duration = 365}}
+		17 = {add_province_modifier = { name = levies_raised_17 duration = 365}}
+		18 = {add_province_modifier = { name = levies_raised_18 duration = 365}}
+		19 = {add_province_modifier = { name = levies_raised_19 duration = 365}}
+		20 = {add_province_modifier = { name = levies_raised_20 duration = 365}}
+	}
+}

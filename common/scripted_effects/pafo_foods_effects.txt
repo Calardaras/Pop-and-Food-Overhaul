@@ -1,162 +1,164 @@
 pafo_foods_output_effect = {
-    if = {
-        limit = { terrain = plains }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            11 = {add_province_modifier = { name = foods_output_11 duration = 365}}
-            12 = {add_province_modifier = { name = foods_output_12 duration = 365}}
-            13 = {add_province_modifier = { name = foods_output_13 duration = 365}}
-            14 = {add_province_modifier = { name = foods_output_14 duration = 365}}
-            15 = {add_province_modifier = { name = foods_output_15 duration = 365}}
-            16 = {add_province_modifier = { name = foods_output_16 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_16 duration = 365}}
+    switch  = {
+        trigger = terrain
+        plains = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = { }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                11 = { add_province_modifier = { name = foods_output_11 duration = 365 } }
+                12 = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+                13 = { add_province_modifier = { name = foods_output_13 duration = 365 } }
+                14 = { add_province_modifier = { name = foods_output_14 duration = 365 } }
+                15 = { add_province_modifier = { name = foods_output_15 duration = 365 } }
+                16 = { add_province_modifier = { name = foods_output_16 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_16 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = mountain }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_8 duration = 365}}
+
+        mountain = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = { }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = hills }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            11 = {add_province_modifier = { name = foods_output_11 duration = 365}}
-            12 = {add_province_modifier = { name = foods_output_12 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_12 duration = 365}}
+
+        hills = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = { }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                11 = { add_province_modifier = { name = foods_output_11 duration = 365 } }
+                12 = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = desert }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_8 duration = 365}}
+
+        desert = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = { }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = marsh }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_10 duration = 365}}
+
+        marsh = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = { }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = jungle }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            11 = {add_province_modifier = { name = foods_output_11 duration = 365}}
-            12 = {add_province_modifier = { name = foods_output_12 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_12 duration = 365}}
+
+        jungle = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = {  }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                11 = { add_province_modifier = { name = foods_output_11 duration = 365 } }
+                12 = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = farmland }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            11 = {add_province_modifier = { name = foods_output_11 duration = 365}}
-            12 = {add_province_modifier = { name = foods_output_12 duration = 365}}
-            13 = {add_province_modifier = { name = foods_output_13 duration = 365}}
-            14 = {add_province_modifier = { name = foods_output_14 duration = 365}}
-            15 = {add_province_modifier = { name = foods_output_15 duration = 365}}
-            16 = {add_province_modifier = { name = foods_output_16 duration = 365}}
-            17 = {add_province_modifier = { name = foods_output_17 duration = 365}}
-            18 = {add_province_modifier = { name = foods_output_18 duration = 365}}
-            19 = {add_province_modifier = { name = foods_output_19 duration = 365}}
-            20 = {add_province_modifier = { name = foods_output_20 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_20 duration = 365}}
+
+        farmland = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = {  }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                11 = { add_province_modifier = { name = foods_output_11 duration = 365 } }
+                12 = { add_province_modifier = { name = foods_output_12 duration = 365 } }
+                13 = { add_province_modifier = { name = foods_output_13 duration = 365 } }
+                14 = { add_province_modifier = { name = foods_output_14 duration = 365 } }
+                15 = { add_province_modifier = { name = foods_output_15 duration = 365 } }
+                16 = { add_province_modifier = { name = foods_output_16 duration = 365 } }
+                17 = { add_province_modifier = { name = foods_output_17 duration = 365 } }
+                18 = { add_province_modifier = { name = foods_output_18 duration = 365 } }
+                19 = { add_province_modifier = { name = foods_output_19 duration = 365 } }
+                20 = { add_province_modifier = { name = foods_output_20 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_20 duration = 365 } }
+            }
         }
-    }
-    if = {
-        limit = { terrain = forest }
-        switch = {
-            trigger = var:curr_fields
-            0 = {add_province_modifier = { name = foods_output_0 duration = 365}}
-            1 = {add_province_modifier = { name = foods_output_1 duration = 365}}
-            2 = {add_province_modifier = { name = foods_output_2 duration = 365}}
-            3 = {add_province_modifier = { name = foods_output_3 duration = 365}}
-            4 = {add_province_modifier = { name = foods_output_4 duration = 365}}
-            5 = {add_province_modifier = { name = foods_output_5 duration = 365}}
-            6 = {add_province_modifier = { name = foods_output_6 duration = 365}}
-            7 = {add_province_modifier = { name = foods_output_7 duration = 365}}
-            8 = {add_province_modifier = { name = foods_output_8 duration = 365}}
-            9 = {add_province_modifier = { name = foods_output_9 duration = 365}}
-            10 = {add_province_modifier = { name = foods_output_10 duration = 365}}
-            fallback = {add_province_modifier = { name = foods_output_10 duration = 365}}
+
+        forest = {
+            switch = {
+                trigger = var:curr_farmer
+                0 = {  }
+                1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
+                2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
+                3 = { add_province_modifier = { name = foods_output_3 duration = 365 } }
+                4 = { add_province_modifier = { name = foods_output_4 duration = 365 } }
+                5 = { add_province_modifier = { name = foods_output_5 duration = 365 } }
+                6 = { add_province_modifier = { name = foods_output_6 duration = 365 } }
+                7 = { add_province_modifier = { name = foods_output_7 duration = 365 } }
+                8 = { add_province_modifier = { name = foods_output_8 duration = 365 } }
+                9 = { add_province_modifier = { name = foods_output_9 duration = 365 } }
+                10 = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+                fallback = { add_province_modifier = { name = foods_output_10 duration = 365 } }
+            }
         }
     }
 }

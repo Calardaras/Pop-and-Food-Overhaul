@@ -1,50 +1,82 @@
-monthly_country_pulse = {
-	on_actions = {
-	}
-	effect = {
-		every_commander = {
-			limit = { 
-				OR = {
-					is_governor = yes
-					is_ruler = yes
-				}
-			}
-			every_governor_state ={
-				limit = {
-					Not = {
-						has_state_modifier = levies_raised
-					}
-				}
-				add_state_modifier = {
-					name = levies_raised
-					duration = 365
-				}
-			}
-		}
-	}
-	events = {
-	}
-}
+# monthly_country_pulse = {
+# 	on_actions = {
+# 	}
+# 	effect = {
+# 		every_commander = {
+# 			limit = { 
+# 				OR = {
+# 					is_governor = yes
+# 					is_ruler = yes
+# 				}
+# 			}
+# 			every_governor_state ={
+# 				limit = {
+# 					Not = {
+# 						has_state_modifier = levies_raised
+# 					}
+# 				}
+# 				add_state_modifier = {
+# 					name = levies_raised
+# 					duration = 365
+# 				}
+# 			}
+# 		}
+# 	}
+# 	events = {
+# 	}
+# }
 
-yearly_province_pulse = {
-	on_actions = {
-	}
-	effect = {
-		if = {
-			limit = { has_variable = curr_fields }
-			set_variable = {
-				name = curr_fields
-				value = total_population
-			}
-			pafo_foods_output_effect = yes
-		}
-	}
-	events = {
-	}
-}
+# monthly_province_pulse = {
+# 	effect = {
+# 		if = {
+# 			limit = {
+# 					has_owner = yes
+# 				}
+# 			if = {
+# 				limit = {					
+# 					governor_or_ruler = { is_general = yes}
+# 				}
+# 				pafo_levies_raised_effect = yes
+# 			}
+# 		}
+# 	}
+# }
 
-on_game_initialized = {
-	events = {
-		pafo_test.1
-	}
-}
+# yearly_province_pulse = {
+# 	on_actions = {
+# 	}
+# 	effect = {
+# 		if = {
+# 			limit = { has_variable = fields }
+# 			set_variable = {
+# 				name = curr_farmer
+# 				value = total_population
+# 			}
+# 			change_variable = {
+# 				name = curr_farmer
+# 				subtract = num_of_nobles
+# 			}
+# 			set_variable = { 
+# 				name = curr_levies
+# 				value = curr_farmer
+# 			}
+# 			change_variable = { 
+# 				name = curr_levies
+# 				subtract = num_of_citizen
+# 			}
+# 			change_variable = { 
+# 				name = curr_levies
+# 				subtract = fields
+# 			}
+# 			pafo_foods_output_effect = yes
+# 		}
+# 	}
+# 	events = {
+# 	}
+# }
+
+# on_game_initialized = {
+# 	events = {
+# 		pafo_test.1
+# 	}
+# }

@@ -1,4 +1,4 @@
-namespace = pafo_test
+﻿namespace = pafo_test
 pafo_test.1 = {
 	#initial
     type = country_event
@@ -6,40 +6,99 @@ pafo_test.1 = {
 	hidden = yes
 
 	immediate = {
-		every_province = {
+		every_owned_province = {
 			switch = {
 				trigger = terrain
 				plains = {
-					set_variable = { name = fields value = 16 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = { 
+						name = fields 
+						value = 16 
+					}
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				mountain = {
 					set_variable = { name = fields value = 8 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				hills = {
 					set_variable = { name = fields value = 12 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				desert = {
 					set_variable = { name = fields value = 8 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				marsh = {
 					set_variable = { name = fields value = 10 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				jungle = {
 					set_variable = { name = fields value = 12 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				farmland = {
 					set_variable = { name = fields value = 20 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 				forest = {
 					set_variable = { name = fields value = 10 }
-					set_variable = { name = curr_fields value = 0 }
+					set_variable = {
+						name = curr_farmer
+						value = calcu_curr_farmer
+					}
+					set_variable = {
+						name = curr_levies
+						value = calcu_curr_levies
+					}
 				}
 			}
 		}
@@ -48,39 +107,70 @@ pafo_test.1 = {
 		name = pafo_test.1.a
 	}
 }
-
 pafo_test.2 = {
-	#get work
+	#check
 	type = country_event
 	title = pafo_test.2.t
 	desc = pafo_test.2.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		every_province = { 
-			limit = { has_variable = curr_fields }
-			set_variable = {
-				name = curr_fields
-				value = total_population
-			}
-			change_variable = {
-				name = curr_fields
-				subtract = num_of_nobles
-			}
-			debug_log_scopes = no
-			pafo_foods_output_effect = yes
+		every_owned_province = {
+			debug_log  = "[THIS.GetProvince.GetName]
+			curr_levies = [THIS.GetProvince.MakeScope.GetVariable('curr_levies').GetValue]
+			curr_farmer = [THIS.GetProvince.MakeScope.GetVariable('curr_farmer').GetValue]
+			fields = [THIS.GetProvince.MakeScope.GetVariable('fields').GetValue]
+			citizen = [THIS.GetProvince.MakeScope.GetVariable('num_of_citizen').GetValue]
+			"
 		}
 	}
 	option = {
 		name = pafo_test.2.a
 	}
 }
-
 pafo_test.3 = {
-	#add food penalty
+	#add food
 	type = country_event
 	title = pafo_test.3.t
 	desc = pafo_test.3.desc
+	picture = aqueducts
+	hidden = no
+	immediate = {
+		every_owned_province = { 
+			limit = { has_variable = fields }
+			set_variable = {
+				name = curr_farmer
+				value = this.total_population
+			}
+			change_variable = {
+				name = curr_farmer
+				subtract = this.num_of_nobles
+			}
+			set_variable = { 
+				name = curr_levies
+				value = var:curr_farmer
+			}
+			change_variable = { 
+				name = curr_levies
+				subtract = this.num_of_citizen
+			}
+			change_variable = { 
+				name = curr_levies
+				subtract = var:fields
+			}
+			pafo_foods_output_effect = yes
+	    }
+	}
+	option = {
+		name = pafo_test.3.a
+	}
+}
+
+pafo_test.4 = {
+	#add food penalty
+	type = country_event
+	title = pafo_test.4.t
+	desc = pafo_test.4.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
@@ -104,11 +194,11 @@ pafo_test.3 = {
 	}
 }
 
-pafo_test.4 = {
+pafo_test.5 = {
 	#clear food penalty
 	type = country_event
-	title = pafo_test.4.t
-	desc = pafo_test.4.desc
+	title = pafo_test.5.t
+	desc = pafo_test.5.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
