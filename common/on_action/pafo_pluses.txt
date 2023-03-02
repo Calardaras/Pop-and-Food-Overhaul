@@ -1,82 +1,49 @@
-# monthly_country_pulse = {
-# 	on_actions = {
-# 	}
-# 	effect = {
-# 		every_commander = {
-# 			limit = { 
-# 				OR = {
-# 					is_governor = yes
-# 					is_ruler = yes
-# 				}
-# 			}
-# 			every_governor_state ={
-# 				limit = {
-# 					Not = {
-# 						has_state_modifier = levies_raised
-# 					}
-# 				}
-# 				add_state_modifier = {
-# 					name = levies_raised
-# 					duration = 365
-# 				}
-# 			}
-# 		}
-# 	}
-# 	events = {
-# 	}
-# }
+monthly_province_pulse = {
+	effect = {
+		if = {
+			limit = {					
+				governor_or_ruler = { is_general = yes}
+				NOT = {
+					has_province_modifier = levies_raised_1
+					has_province_modifier = levies_raised_2
+					has_province_modifier = levies_raised_3
+					has_province_modifier = levies_raised_4
+					has_province_modifier = levies_raised_5
+					has_province_modifier = levies_raised_6
+					has_province_modifier = levies_raised_7
+					has_province_modifier = levies_raised_8
+					has_province_modifier = levies_raised_9
+					has_province_modifier = levies_raised_10
+					has_province_modifier = levies_raised_11
+					has_province_modifier = levies_raised_12
+					has_province_modifier = levies_raised_13
+					has_province_modifier = levies_raised_14
+					has_province_modifier = levies_raised_15
+					has_province_modifier = levies_raised_16
+					has_province_modifier = levies_raised_17
+					has_province_modifier = levies_raised_18
+					has_province_modifier = levies_raised_19
+					has_province_modifier = levies_raised_20
+				}
+			}
+			pafo_levies_raised_effect = yes
+		}
+		}
+	}
+}
 
-# monthly_province_pulse = {
-# 	effect = {
-# 		if = {
-# 			limit = {
-# 					has_owner = yes
-# 				}
-# 			if = {
-# 				limit = {					
-# 					governor_or_ruler = { is_general = yes}
-# 				}
-# 				pafo_levies_raised_effect = yes
-# 			}
-# 		}
-# 	}
-# }
+yearly_province_pulse = {
+	on_actions = {
+	}
+	effect = {
+		pafo_setup_effect = yes
+	}
+	events = {
+	}
+}
 
-# yearly_province_pulse = {
-# 	on_actions = {
-# 	}
-# 	effect = {
-# 		if = {
-# 			limit = { has_variable = fields }
-# 			set_variable = {
-# 				name = curr_farmer
-# 				value = total_population
-# 			}
-# 			change_variable = {
-# 				name = curr_farmer
-# 				subtract = num_of_nobles
-# 			}
-# 			set_variable = { 
-# 				name = curr_levies
-# 				value = curr_farmer
-# 			}
-# 			change_variable = { 
-# 				name = curr_levies
-# 				subtract = num_of_citizen
-# 			}
-# 			change_variable = { 
-# 				name = curr_levies
-# 				subtract = fields
-# 			}
-# 			pafo_foods_output_effect = yes
-# 		}
-# 	}
-# 	events = {
-# 	}
-# }
-
-# on_game_initialized = {
-# 	events = {
-# 		pafo_test.1
-# 	}
-# }
+on_game_initialized = {
+	effect = {
+		pafo_setup_effect = yes
+	}
+}

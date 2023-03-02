@@ -46,26 +46,7 @@ pafo_test.3 = {
 	immediate = {
 		every_owned_province = { 
 			limit = { has_variable = fields }
-			set_variable = {
-				name = curr_farmer
-				value = this.total_population
-			}
-			change_variable = {
-				name = curr_farmer
-				subtract = this.num_of_nobles
-			}
-			set_variable = { 
-				name = curr_levies
-				value = var:curr_farmer
-			}
-			change_variable = { 
-				name = curr_levies
-				subtract = this.num_of_citizen
-			}
-			change_variable = { 
-				name = curr_levies
-				subtract = var:fields
-			}
+			pafo_setup_effect = yes
 			pafo_foods_output_effect = yes
 	    }
 	}
@@ -82,41 +63,33 @@ pafo_test.4 = {
 	picture = aqueducts
 	hidden = no
 	immediate = {
-		every_commander = {
-			limit = { 
-				OR = {
-					is_governor = yes
-					is_ruler = yes
+		every_owned_province = { 
+			limit = {					
+				governor_or_ruler = { is_general = yes}
+				NOT = {
+					has_province_modifier = levies_raised_1
+					has_province_modifier = levies_raised_2
+					has_province_modifier = levies_raised_3
+					has_province_modifier = levies_raised_4
+					has_province_modifier = levies_raised_5
+					has_province_modifier = levies_raised_6
+					has_province_modifier = levies_raised_7
+					has_province_modifier = levies_raised_8
+					has_province_modifier = levies_raised_9
+					has_province_modifier = levies_raised_10
+					has_province_modifier = levies_raised_11
+					has_province_modifier = levies_raised_12
+					has_province_modifier = levies_raised_13
+					has_province_modifier = levies_raised_14
+					has_province_modifier = levies_raised_15
+					has_province_modifier = levies_raised_16
+					has_province_modifier = levies_raised_17
+					has_province_modifier = levies_raised_18
+					has_province_modifier = levies_raised_19
+					has_province_modifier = levies_raised_20
 				}
 			}
-			every_governor_state ={
-				add_state_modifier = {
-					name = levies_raised
-					duration = 365
-				}
-			}
-		}
-	}
-	option = {
-		name = pafo_test.3.a
-	}
-}
-
-pafo_test.5 = {
-	#clear food penalty
-	type = country_event
-	title = pafo_test.5.t
-	desc = pafo_test.5.desc
-	picture = aqueducts
-	hidden = no
-	immediate = {
-		every_country_state = {
-			limit = {
-				governor_or_ruler = {
-					is_general = no
-				}
-		    }
-			remove_state_modifier = levies_raised
+			pafo_levies_raised_effect = yes
 		}
 	}
 	option = {
