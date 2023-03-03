@@ -1,0 +1,40 @@
+﻿namespace = pafo_utilities
+
+pafo_utilities.1 = {
+	#foods output
+    type = country_event
+	hidden = yes
+	immediate = {
+		every_owned_province = { 
+			pafo_foods_output_effect = yes
+	    }
+	}
+}
+
+pafo_utilities.2 = {
+	#levies penalties
+    type = country_event
+	hidden = yes
+	immediate = {
+		every_country_state = {
+			limit = { 
+				OR = { 
+					has_governor = yes
+					is_capital_state = yes
+				}
+			}
+			every_state_province = {
+				if = {
+					limit = {
+						AND = {
+							governor_or_ruler = { is_general = yes }
+							NOT = { levies_raised_trigger = yes }
+						}
+					}
+					pafo_levies_raised_effect = yes
+				}
+			}
+		}
+	}
+}
+
