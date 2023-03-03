@@ -1,9 +1,9 @@
-pafo_foods_output_effect = {
+﻿pafo_foods_output_effect = {
     switch  = {
         trigger = terrain
         plains = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = { }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -27,7 +27,7 @@ pafo_foods_output_effect = {
 
         mountain = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = { }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -43,7 +43,7 @@ pafo_foods_output_effect = {
 
         hills = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = { }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -63,7 +63,7 @@ pafo_foods_output_effect = {
 
         desert = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = { }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -79,7 +79,7 @@ pafo_foods_output_effect = {
 
         marsh = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = { }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -97,7 +97,7 @@ pafo_foods_output_effect = {
 
         jungle = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = {  }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -117,7 +117,7 @@ pafo_foods_output_effect = {
 
         farmland = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = {  }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }
@@ -145,7 +145,7 @@ pafo_foods_output_effect = {
 
         forest = {
             switch = {
-                trigger = var:curr_farmer
+                trigger = calcu_curr_farmers
                 0 = {  }
                 1 = { add_province_modifier = { name = foods_output_1 duration = 365 } }
                 2 = { add_province_modifier = { name = foods_output_2 duration = 365 } }

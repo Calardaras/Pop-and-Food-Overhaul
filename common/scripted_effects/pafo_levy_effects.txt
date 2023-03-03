@@ -1,6 +1,6 @@
-pafo_levies_raised_effect = {
+﻿pafo_levies_raised_effect = {
 	switch = {
-		trigger = var:curr_levies
+		trigger = calcu_curr_levies
 		1 = {add_province_modifier = { name = levies_raised_1 duration = 365}}
 		2 = {add_province_modifier = { name = levies_raised_2 duration = 365}}
 		3 = {add_province_modifier = { name = levies_raised_3 duration = 365}}

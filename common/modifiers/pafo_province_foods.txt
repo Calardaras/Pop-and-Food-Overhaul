@@ -1,4 +1,4 @@
-foods_output_1 = { local_monthly_food = 0.25 }
+﻿foods_output_1 = { local_monthly_food = 0.25 }
 levies_raised_1 = { local_monthly_food = -0.25 }
 foods_output_2 = { local_monthly_food = 0.5 }
 levies_raised_2 = { local_monthly_food = -0.5 }

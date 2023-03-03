@@ -7,5 +7,5 @@ data = ""
 for i in range(int(6.5/food_per_yeld+1)):
     data += "foods_output_"+str(i)+" = { local_monthly_food = "+str(i*food_per_yeld)+" }\n"
     data += "levies_raised_"+str(i)+" = { local_monthly_food = -"+str(i*food_per_yeld)+" }\n"
-file=open(filename,'w',encoding='utf8')
+file=open(filename,'w',encoding='utf8bom')
 file.write(data)

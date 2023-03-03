@@ -7,25 +7,25 @@ for i in range(len(terrain_types)):
     data += "\n        "+ terrain_types[i] +" = {\n"
     data += "            set_variable = { name = fields value = "+ str(int(foods[i]/food_per_yeld)) +" }\n"
     data += """			set_variable = {
-				name = curr_farmer
+				name = curr_farmers
 				value = this.total_population
 			}
 			change_variable = {
-				name =curr_farmer
+				name =curr_farmers
 				subtract = this.num_of_nobles
 			}
 			set_variable = {
-				name = field_balance
+				name = fields_balance
 				value = var:fields
 			}
 			change_variable = {
-				name = field_balance
-				subtract = var:curr_farmer
+				name = fields_balance
+				subtract = var:curr_farmers
 			}
 			if ={
-				limit = { var:field_balance > 0 }
+				limit = { var:fields_balance > 0 }
 				set_variable = {
-					name = field_balance
+					name = fields_balance
 					value = 0
 				}
 			}
@@ -35,7 +35,7 @@ for i in range(len(terrain_types)):
 			}
 			change_variable = {
 				name = curr_levies
-				add = var:field_balance
+				add = var:fields_balance
 			}
 			if ={
 				limit = { var:curr_levies < 0 }
@@ -46,5 +46,5 @@ for i in range(len(terrain_types)):
 			}
 		}"""
 data += "\n    }\n}"
-file=open(filename,'w',encoding='utf8')
+file=open(filename,'w',encoding='utf8bom')
 file.write(data)

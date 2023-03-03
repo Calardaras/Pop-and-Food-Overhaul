@@ -1,0 +1,25 @@
+﻿calcu_curr_farmers = {
+    value = this.total_population
+    subtract = this.num_of_nobles
+}
+
+calcu_fields_balance = {
+    if = { limit = { terrain = plains } value = 16 }
+    if = { limit = { terrain = mountain } value = 8 }
+    if = { limit = { terrain = hills } value = 12 }
+    if = { limit = { terrain = desert } value = 8 }
+    if = { limit = { terrain = marsh } value = 10 }
+    if = { limit = { terrain = jungle } value = 12 }
+    if = { limit = { terrain = farmland } value = 20 }
+    if = { limit = { terrain = forest } value = 10 }
+    subtract = calcu_curr_farmers 
+}
+
+calcu_curr_levies = {
+    value = this.num_of_citizen
+    if = {
+        limit = { calcu_fields_balance <= 0 }
+        add = calcu_fields_balance
+    }
+}
+

@@ -1,5 +1,6 @@
 ﻿namespace = pafo_test
-pafo_test.1 = {
+
+pafo_test.5 = {
 	#initial
     type = country_event
 	
@@ -10,52 +11,47 @@ pafo_test.1 = {
 			pafo_setup_effect = yes
 		}
 	}
-	option = {
-		name = pafo_test.1.a
-	}
 }
-pafo_test.2 = {
+
+pafo_test.6 = {
 	#check
 	type = country_event
-	title = pafo_test.2.t
-	desc = pafo_test.2.desc
+	title = pafo_test.6.t
+	desc = pafo_test.6.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
 		every_owned_province = {
 			debug_log  = "[THIS.GetProvince.GetName]
+			curr_farmers = [THIS.GetProvince.MakeScope.GetVariable('curr_farmers').GetValue]
+			curr_fields_balance = [THIS.GetProvince.MakeScope.GetVariable('curr_fields_balance').GetValue]
 			curr_levies = [THIS.GetProvince.MakeScope.GetVariable('curr_levies').GetValue]
-			curr_farmer = [THIS.GetProvince.MakeScope.GetVariable('curr_farmer').GetValue]
-			fields = [THIS.GetProvince.MakeScope.GetVariable('fields').GetValue]
-			field_balance = [THIS.GetProvince.MakeScope.GetVariable('field_balance').GetValue]
-			citizen = [THIS.GetProvince.MakeScope.GetVariable('num_of_citizen').GetValue]
 			"
 		}
 	}
 	option = {
-		name = pafo_test.2.a
+		name = pafo_test.6.a
 	}
 }
-pafo_test.3 = {
+
+pafo_test.7 = {
 	#add food
 	type = country_event
-	title = pafo_test.3.t
-	desc = pafo_test.3.desc
+	title = pafo_test.6.t
+	desc = pafo_test.6.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
 		every_owned_province = { 
-			limit = { has_variable = fields }
-			pafo_setup_effect = yes
-			pafo_foods_output_effect = yes
+			pafo_foods_output_effect  = yes
 	    }
 	}
 	option = {
-		name = pafo_test.3.a
+		name = pafo_test.6.a
 	}
 }
 
-pafo_test.4 = {
+pafo_test.8 = {
 	#add food penalty
 	type = country_event
 	title = pafo_test.4.t
