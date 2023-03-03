@@ -1,17 +1,17 @@
 ﻿namespace = pafo_test
 
-pafo_test.5 = {
-	#initial
-    type = country_event
+# pafo_test.5 = {
+# 	#initial
+#     type = country_event
 	
-	hidden = yes
+# 	hidden = yes
 
-	immediate = {
-		every_owned_province = {
-			pafo_setup_effect = yes
-		}
-	}
-}
+# 	immediate = {
+# 		every_owned_province = {
+# 			pafo_setup_effect = yes
+# 		}
+# 	}
+# }
 
 pafo_test.6 = {
 	#check

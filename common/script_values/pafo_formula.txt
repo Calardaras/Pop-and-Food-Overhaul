@@ -18,6 +18,10 @@ calcu_fields_balance = {
 calcu_curr_levies = {
     value = this.num_of_citizen
     if = {
+        limit = { owner = { is_tribal = yes } }
+        add = this.num_of_tribesmen
+    }
+    if = {
         limit = { calcu_fields_balance <= 0 }
         add = calcu_fields_balance
     }

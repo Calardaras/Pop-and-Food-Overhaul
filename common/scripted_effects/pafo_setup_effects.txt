@@ -1,14 +1,14 @@
-﻿pafo_setup_effect = {
-	set_variable = {
-		name = curr_farmers
-		value = calcu_curr_farmers
-	}
-	set_variable = {
-		name = curr_fields_balance
-		value = calcu_fields_balance
-	}
-	set_variable = {
-		name = curr_levies
-		value = calcu_curr_levies 
-	}
-}
+﻿# pafo_setup_effect = {
+# 	set_variable = {
+# 		name = curr_farmers
+# 		value = calcu_curr_farmers
+# 	}
+# 	set_variable = {
+# 		name = curr_fields_balance
+# 		value = calcu_fields_balance
+# 	}
+# 	set_variable = {
+# 		name = curr_levies
+# 		value = calcu_curr_levies 
+# 	}
+# }
