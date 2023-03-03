@@ -47,3 +47,9 @@ monthly_country_pulse = {
 		pafo_monthly_levies_penalty_pulse
 	}
 }
+
+on_game_initialized = {
+	on_actions = {
+		pafo_yearly_foods_output_pulse
+	}
+}

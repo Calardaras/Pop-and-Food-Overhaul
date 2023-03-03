@@ -4,6 +4,9 @@
 }
 
 calcu_fields_balance = {
+    if = { limit = { terrain = oasis } value = 12 }
+    if = { limit = { terrain = desert_hills } value = 8 }
+    if = { limit = { terrain = flood_plain } value = 20 }
     if = { limit = { terrain = plains } value = 16 }
     if = { limit = { terrain = mountain } value = 8 }
     if = { limit = { terrain = hills } value = 12 }

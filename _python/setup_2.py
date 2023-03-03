@@ -1,5 +1,5 @@
-terrain_types = ['plains','mountain','hills','desert','marsh','jungle','farmland','forest']
-foods = [4,2,3,2,2.5,3,5,2.5]
+terrain_types = ['oasis','desert_hills','flood_plain','plains','mountain','hills','desert','marsh','jungle','farmland','forest']
+foods = [3,2,5,4,2,3,2,2.5,3,5,2.5]
 food_per_yeld = 0.25
 filename = "common\\scripted_effects\\pafo_setup_effects.txt"
 data = "pafo_setup_effect = {\n    switch = {\n        trigger = terrain"
@@ -46,5 +46,5 @@ for i in range(len(terrain_types)):
 			}
 		}"""
 data += "\n    }\n}"
-file=open(filename,'w',encoding='utf8bom')
+file=open(filename,'w',encoding='utf-8')
 file.write(data)
