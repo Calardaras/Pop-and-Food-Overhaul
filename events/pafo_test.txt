@@ -1,23 +1,9 @@
 ﻿namespace = pafo_test
 
-# pafo_test.5 = {
-# 	#initial
-#     type = country_event
-	
-# 	hidden = yes
-
-# 	immediate = {
-# 		every_owned_province = {
-# 			pafo_setup_effect = yes
-# 		}
-# 	}
-# }
-
 pafo_test.6 = {
 	#check
 	type = country_event
-	picture = aqueducts
-	hidden = no
+	hidden = yes
 	immediate = {
 		every_owned_province = {
 			debug_log  = "[THIS.GetProvince.GetName]
@@ -32,8 +18,7 @@ pafo_test.6 = {
 pafo_test.7 = {
 	#add food
 	type = country_event
-	picture = aqueducts
-	hidden = no
+	hidden = yes
 	immediate = {
 		every_owned_province = { 
 			pafo_foods_output_effect  = yes
@@ -44,8 +29,7 @@ pafo_test.7 = {
 pafo_test.8 = {
 	#add food penalty
 	type = country_event
-	picture = aqueducts
-	hidden = no
+	hidden = yes
 	immediate = {
 		every_country_state = {
 			limit = { 
