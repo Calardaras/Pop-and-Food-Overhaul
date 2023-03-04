@@ -16,8 +16,6 @@
 pafo_test.6 = {
 	#check
 	type = country_event
-	title = pafo_test.6.t
-	desc = pafo_test.6.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
@@ -29,16 +27,11 @@ pafo_test.6 = {
 			"
 		}
 	}
-	option = {
-		name = pafo_test.6.a
-	}
 }
 
 pafo_test.7 = {
 	#add food
 	type = country_event
-	title = pafo_test.6.t
-	desc = pafo_test.6.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
@@ -46,16 +39,11 @@ pafo_test.7 = {
 			pafo_foods_output_effect  = yes
 	    }
 	}
-	option = {
-		name = pafo_test.6.a
-	}
 }
 
 pafo_test.8 = {
 	#add food penalty
 	type = country_event
-	title = pafo_test.4.t
-	desc = pafo_test.4.desc
 	picture = aqueducts
 	hidden = no
 	immediate = {
@@ -71,27 +59,8 @@ pafo_test.8 = {
 					limit = {
 						AND = {
 							governor_or_ruler = { is_general = yes}
-							NOR = {
-								has_province_modifier = levies_raised_1
-								has_province_modifier = levies_raised_2
-								has_province_modifier = levies_raised_3
-								has_province_modifier = levies_raised_4
-								has_province_modifier = levies_raised_5
-								has_province_modifier = levies_raised_6
-								has_province_modifier = levies_raised_7
-								has_province_modifier = levies_raised_8
-								has_province_modifier = levies_raised_9
-								has_province_modifier = levies_raised_10
-								has_province_modifier = levies_raised_11
-								has_province_modifier = levies_raised_12
-								has_province_modifier = levies_raised_13
-								has_province_modifier = levies_raised_14
-								has_province_modifier = levies_raised_15
-								has_province_modifier = levies_raised_16
-								has_province_modifier = levies_raised_17
-								has_province_modifier = levies_raised_18
-								has_province_modifier = levies_raised_19
-								has_province_modifier = levies_raised_20
+							NOT = {
+								levies_raised_trigger = yes
 							}
 						}
 					}
@@ -100,7 +69,5 @@ pafo_test.8 = {
 			}
 		}
 	}
-	option = {
-		name = pafo_test.4.a
-	}
+
 }
